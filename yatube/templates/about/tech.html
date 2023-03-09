@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Технологии{% endblock %}
+{% block content %}
+{% comment %} Колонки с отступом сверху и снизу {% endcomment %}
+<div class="row">
+  <h1>Вот что я умею</h1>
+  <p><i>надеюсь так и будет!...</i></p>
+  {% comment %}
+    Боковой блок со списком технологий 
+    Займет всю ширину блока на мобильном
+    и 25% при размерах экрана ≥768px
+  {% endcomment %}
+  <aside class="col-12 col-md-3">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <span style="color:blue"><h5>Python</h5></span>
+      </li>
+      <li class="list-group-item">
+        <span style="color:red"><h5>Django</h5></span>
+      </li>
+      <li class="list-group-item">
+        <span style="color:brown"><h5>Nespresso</h5>
+      </li>
+    </ul>
+  </aside>
+  {% comment %}
+    Статья  
+    Займет всю ширину блока на мобильном
+    и 75% при размерах экрана ≥768px
+  {% endcomment %}
+  <article class="col-12 col-md-9">
+    <p>При создании проекта Yatube мне пришлось с "нуля" изучить Python, Django
+        и древние китайские методики по обретению внутреннего покоя и произвольного
+        регулирования кровотока в пятой точке</p>
+    <p>Немаловажную роль сыграла технология Nesspresso - только благодаря ей в сочетании
+        с древнейшими индийским практиками буддистских йогов я сумел развить в себе
+        способность неподвижно часами сидеть на одном месте и глядеть в одну точку размером
+        1400 х 740 не мигая...</p>
+  </article>
+</div>
+{% endblock %} 
