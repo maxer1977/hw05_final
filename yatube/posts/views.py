@@ -43,12 +43,8 @@ def group_posts(request, slug):
 def profile(request, username):
     """Страница с записями одного автора"""
     user = get_object_or_404(User, username=username)
-    if not request.user.is_authenticated:
-        following = 2
-    elif Follow.objects.filter(author=user, user=request.user).exists():
-        following = 1
-    else:
-        following = 0
+    following = (request.user.is_authenticated and Follow.objects.filter(
+        author=user, user=request.user).exists())
     post_list = user.posts.select_related('author', 'group').order_by(
         '-pub_date')
     context = {'author': user, 'page_obj': paginator(request, post_list),
